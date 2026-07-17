@@ -60,6 +60,7 @@
   background-color: #f3f4f6;
 }
 
+/* Validation States */
 .input.error {
   border-color: #ef4444;
   background-color: #fef2f2;
@@ -70,6 +71,32 @@
   border-color: #ef4444;
 }
 
+.input.valid {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.input.valid:focus {
+  outline-color: #10b981;
+  border-color: #10b981;
+}
+
+.input.validating {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Icon Wrappers */
 .leftIconWrapper {
   position: absolute;
   left: 0.75rem;
@@ -96,6 +123,7 @@
   z-index: 1;
 }
 
+/* Error and Helper Text */
 .errorMessage {
   font-size: 0.875rem;
   color: #ef4444;
@@ -108,6 +136,7 @@
   margin-top: 0.25rem;
 }
 
+/* Character Counter */
 .charCount {
   font-size: 0.75rem;
   color: #6b7280;
@@ -121,6 +150,12 @@
   font-weight: 500;
 }
 
+.charCountError {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Responsive Design */
 @media (max-width: 640px) {
   .input {
     font-size: 0.875rem;
@@ -138,6 +173,19 @@
   .leftIconWrapper,
   .rightIconWrapper {
     font-size: 0.875rem;
+  }
+
+  .charCount {
+    font-size: 0.6875rem;
+  }
+
+  .label {
+    font-size: 0.8125rem;
+  }
+
+  .errorMessage,
+  .helperText {
+    font-size: 0.8125rem;
   }
 }
 

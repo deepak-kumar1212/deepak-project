@@ -16,9 +16,17 @@
   color: #ef4444;
 }
 
+/* Input Wrapper for Icon Positioning */
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Base Input Styles */
 .input {
   width: 100%;
-  padding: 0.625rem 0.75rem;
   font-size: 1rem;
   font-family: inherit;
   line-height: 1.5;
@@ -27,6 +35,7 @@
   border: 1px solid #d1d5db;
   border-radius: 0.375rem;
   transition: all 0.2s ease-in-out;
+  padding: 0.625rem 0.75rem;
 }
 
 .input:hover:not(:disabled) {
@@ -45,6 +54,237 @@
   background-color: #f3f4f6;
 }
 
+/* Variant Styles */
+.variant-default {
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+}
+
+.variant-outlined {
+  border: 2px solid #d1d5db;
+  background-color: transparent;
+}
+
+.variant-outlined:focus {
+  border-color: #3b82f6;
+  outline: none;
+  outline-offset: 0;
+}
+
+.variant-filled {
+  border: none;
+  border-bottom: 2px solid #d1d5db;
+  background-color: #f3f4f6;
+  border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.variant-filled:focus {
+  border-bottom-color: #3b82f6;
+  outline: none;
+  outline-offset: 0;
+  background-color: #e5e7eb;
+}
+
+.variant-underlined {
+  border: none;
+  border-bottom: 1px solid #d1d5db;
+  background-color: transparent;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.variant-underlined:focus {
+  border-bottom-color: #3b82f6;
+  border-bottom-width: 2px;
+  outline: none;
+  outline-offset: 0;
+}
+
+/* Size Variants */
+.size-small {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  height: 2rem;
+}
+
+.size-medium {
+  padding: 0.625rem 0.75rem;
+  font-size: 1rem;
+  height: 2.5rem;
+}
+
+.size-large {
+  padding: 0.875rem 1rem;
+  font-size: 1.125rem;
+  height: 3rem;
+}
+
+/* Adjust padding for underlined variant */
+.variant-underlined.size-small {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.variant-underlined.size-medium {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.variant-underlined.size-large {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Icon Padding Adjustments */
+.hasLeftIcon.size-small {
+  padding-left: 2rem;
+}
+
+.hasLeftIcon.size-medium {
+  padding-left: 2.5rem;
+}
+
+.hasLeftIcon.size-large {
+  padding-left: 3rem;
+}
+
+.hasRightIcon.size-small {
+  padding-right: 2rem;
+}
+
+.hasRightIcon.size-medium {
+  padding-right: 2.5rem;
+}
+
+.hasRightIcon.size-large {
+  padding-right: 3rem;
+}
+
+.hasClearButton.size-small {
+  padding-right: 2rem;
+}
+
+.hasClearButton.size-medium {
+  padding-right: 2.5rem;
+}
+
+.hasClearButton.size-large {
+  padding-right: 3rem;
+}
+
+/* Underlined variant icon adjustments */
+.variant-underlined.hasLeftIcon {
+  padding-left: 1.75rem;
+}
+
+.variant-underlined.hasRightIcon {
+  padding-right: 1.75rem;
+}
+
+.variant-underlined.hasClearButton {
+  padding-right: 1.75rem;
+}
+
+/* Icon Styles */
+.leftIcon,
+.rightIcon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  pointer-events: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.leftIcon {
+  left: 0.75rem;
+}
+
+.rightIcon {
+  right: 0.75rem;
+}
+
+.leftIcon:hover,
+.rightIcon:hover {
+  color: #374151;
+}
+
+.size-small .leftIcon {
+  left: 0.5rem;
+}
+
+.size-small .rightIcon {
+  right: 0.5rem;
+}
+
+.size-large .leftIcon {
+  left: 1rem;
+}
+
+.size-large .rightIcon {
+  right: 1rem;
+}
+
+.input:focus ~ .leftIcon,
+.input:focus ~ .rightIcon {
+  color: #3b82f6;
+}
+
+/* Clear Button */
+.clearButton {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.clearButton:hover {
+  color: #374151;
+  background-color: #f3f4f6;
+}
+
+.clearButton:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.size-small .clearButton {
+  right: 0.5rem;
+}
+
+.size-large .clearButton {
+  right: 1rem;
+}
+
+/* Character Counter */
+.charCount {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+.charCountWarning {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.charCountLimit {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Error State */
 .input.error {
   border-color: #ef4444;
   background-color: #fef2f2;
@@ -55,7 +295,27 @@
   border-color: #ef4444;
 }
 
+.variant-outlined.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.variant-filled.error {
+  border-bottom-color: #ef4444;
+  background-color: #fee2e2;
+}
+
+.variant-underlined.error {
+  border-bottom-color: #ef4444;
+}
+
 .errorMessage {
+  font-size: 0.875rem;
+  color: #dc2626;
+  margin-top: 0.25rem;
+}
+
+.validationError {
   font-size: 0.875rem;
   color: #dc2626;
   margin-top: 0.25rem;
@@ -67,16 +327,100 @@
   margin-top: 0.25rem;
 }
 
+/* Responsive Design */
 @media (max-width: 640px) {
   .input {
     font-size: 0.875rem;
+  }
+
+  .size-small {
+    font-size: 0.8125rem;
+    padding: 0.3125rem 0.4375rem;
+    height: 1.875rem;
+  }
+
+  .size-medium {
+    font-size: 0.875rem;
     padding: 0.5rem 0.625rem;
+    height: 2.25rem;
+  }
+
+  .size-large {
+    font-size: 1rem;
+    padding: 0.75rem 0.875rem;
+    height: 2.75rem;
   }
 
   .label,
   .errorMessage,
-  .helperText {
+  .helperText,
+  .validationError {
     font-size: 0.8125rem;
+  }
+
+  .charCount {
+    font-size: 0.6875rem;
+  }
+
+  .leftIcon,
+  .rightIcon {
+    font-size: 0.875rem;
+  }
+
+  .hasLeftIcon.size-small {
+    padding-left: 1.75rem;
+  }
+
+  .hasLeftIcon.size-medium {
+    padding-left: 2rem;
+  }
+
+  .hasLeftIcon.size-large {
+    padding-left: 2.5rem;
+  }
+
+  .hasRightIcon.size-small {
+    padding-right: 1.75rem;
+  }
+
+  .hasRightIcon.size-medium {
+    padding-right: 2rem;
+  }
+
+  .hasRightIcon.size-large {
+    padding-right: 2.5rem;
+  }
+
+  .hasClearButton.size-small {
+    padding-right: 1.75rem;
+  }
+
+  .hasClearButton.size-medium {
+    padding-right: 2rem;
+  }
+
+  .hasClearButton.size-large {
+    padding-right: 2.5rem;
+  }
+
+  .clearButton {
+    padding: 0.1875rem;
+  }
+
+  .variant-underlined.hasLeftIcon,
+  .variant-underlined.hasRightIcon,
+  .variant-underlined.hasClearButton {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .variant-underlined.hasLeftIcon {
+    padding-left: 1.5rem;
+  }
+
+  .variant-underlined.hasRightIcon,
+  .variant-underlined.hasClearButton {
+    padding-right: 1.5rem;
   }
 }
 

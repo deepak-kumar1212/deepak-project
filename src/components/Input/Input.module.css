@@ -105,16 +105,19 @@
 .size-small {
   padding: 0.375rem 0.5rem;
   font-size: 0.875rem;
+  height: 2rem;
 }
 
 .size-medium {
   padding: 0.625rem 0.75rem;
   font-size: 1rem;
+  height: 2.5rem;
 }
 
 .size-large {
   padding: 0.875rem 1rem;
   font-size: 1.125rem;
+  height: 3rem;
 }
 
 /* Adjust padding for underlined variant */
@@ -158,12 +161,28 @@
   padding-right: 3rem;
 }
 
+.hasClearButton.size-small {
+  padding-right: 2rem;
+}
+
+.hasClearButton.size-medium {
+  padding-right: 2.5rem;
+}
+
+.hasClearButton.size-large {
+  padding-right: 3rem;
+}
+
 /* Underlined variant icon adjustments */
 .variant-underlined.hasLeftIcon {
   padding-left: 1.75rem;
 }
 
 .variant-underlined.hasRightIcon {
+  padding-right: 1.75rem;
+}
+
+.variant-underlined.hasClearButton {
   padding-right: 1.75rem;
 }
 
@@ -185,6 +204,11 @@
 
 .rightIcon {
   right: 0.75rem;
+}
+
+.leftIcon:hover,
+.rightIcon:hover {
+  color: #374151;
 }
 
 .size-small .leftIcon {
@@ -216,7 +240,7 @@
   align-items: center;
   justify-content: center;
   padding: 0.25rem;
-  background: none;
+  background: transparent;
   border: none;
   color: #6b7280;
   cursor: pointer;
@@ -247,12 +271,17 @@
   font-size: 0.75rem;
   color: #6b7280;
   text-align: right;
-  margin-top: -0.25rem;
+  margin-top: 0.25rem;
 }
 
 .charCountWarning {
   color: #f59e0b;
   font-weight: 500;
+}
+
+.charCountLimit {
+  color: #ef4444;
+  font-weight: 600;
 }
 
 /* Error State */
@@ -286,6 +315,12 @@
   margin-top: 0.25rem;
 }
 
+.validationError {
+  font-size: 0.875rem;
+  color: #dc2626;
+  margin-top: 0.25rem;
+}
+
 .helperText {
   font-size: 0.875rem;
   color: #6b7280;
@@ -301,21 +336,25 @@
   .size-small {
     font-size: 0.8125rem;
     padding: 0.3125rem 0.4375rem;
+    height: 1.875rem;
   }
 
   .size-medium {
     font-size: 0.875rem;
     padding: 0.5rem 0.625rem;
+    height: 2.25rem;
   }
 
   .size-large {
     font-size: 1rem;
     padding: 0.75rem 0.875rem;
+    height: 2.75rem;
   }
 
   .label,
   .errorMessage,
-  .helperText {
+  .helperText,
+  .validationError {
     font-size: 0.8125rem;
   }
 
@@ -350,6 +389,38 @@
 
   .hasRightIcon.size-large {
     padding-right: 2.5rem;
+  }
+
+  .hasClearButton.size-small {
+    padding-right: 1.75rem;
+  }
+
+  .hasClearButton.size-medium {
+    padding-right: 2rem;
+  }
+
+  .hasClearButton.size-large {
+    padding-right: 2.5rem;
+  }
+
+  .clearButton {
+    padding: 0.1875rem;
+  }
+
+  .variant-underlined.hasLeftIcon,
+  .variant-underlined.hasRightIcon,
+  .variant-underlined.hasClearButton {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .variant-underlined.hasLeftIcon {
+    padding-left: 1.5rem;
+  }
+
+  .variant-underlined.hasRightIcon,
+  .variant-underlined.hasClearButton {
+    padding-right: 1.5rem;
   }
 }
 

@@ -1,3 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.container.fullWidth {
+  width: 100%;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.required {
+  color: #ef4444;
+}
+
 .select {
   width: 100%;
   padding: 0.625rem 2.5rem 0.625rem 0.75rem;
@@ -27,16 +49,52 @@
   border-color: #3b82f6;
 }
 
-.select:disabled {
+.select:disabled,
+.selectDisabled {
   opacity: 0.6;
   cursor: not-allowed;
   background-color: #f3f4f6;
+}
+
+.selectError {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.selectError:focus {
+  outline-color: #ef4444;
+  border-color: #ef4444;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.errorMessage {
+  font-size: 0.875rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+.helperText {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
 }
 
 @media (max-width: 640px) {
   .select {
     font-size: 0.875rem;
     padding: 0.5rem 2rem 0.5rem 0.625rem;
+  }
+
+  .label {
+    font-size: 0.8125rem;
+  }
+
+  .errorMessage,
+  .helperText {
+    font-size: 0.8125rem;
   }
 }
 

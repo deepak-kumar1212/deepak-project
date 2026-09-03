@@ -12,5 +12,10 @@ export interface SelectProps {
   className?: string;
   name?: string;
   id?: string;
+  label?: string;
+  error?: string;
+  helperText?: string;
+  required?: boolean;
+  fullWidth?: boolean;
 }
 
